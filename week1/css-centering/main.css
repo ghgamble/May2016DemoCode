@@ -1,0 +1,40 @@
+.text-center{
+    text-align:center;
+}
+
+.papadiv{
+    height:900px;
+    background-color:#08c;
+    line-height: 300px;
+    position: relative;
+}
+
+.babydiv{
+    height:50px;
+    width:50px;
+    background-color:peru;
+    margin:auto;
+    position: absolute;
+    
+    /*Vertical & */
+    /*Horizontal*/
+    top:50%; left:50%;/* refers to parent element's height */
+    transform:translateY(-50%) translateX(-50%); /* refers to element's OWN height */
+    
+
+    
+    
+}
+
+/*Flex box!*/
+.mamadiv{
+    height:500px;
+    background-color:rebeccapurple;
+    display:flex;
+}
+.baby2div{
+    height:50px;
+    width:50px;
+    background-color:cadetblue;
+    margin:auto;
+}

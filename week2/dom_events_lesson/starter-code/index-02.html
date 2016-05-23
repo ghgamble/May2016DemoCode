@@ -2,11 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Exercise</title> 
+    <title>Exercise</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js">
+</script>
   </head>
   <body>
-    <div id="div-1"><div>text</div><p>some text</p></div>
-
+    <div id="div-1">
+      <div>text</div>
+      <p>some text</p>
+    </div>
     <div id="div-2">
       I'm div #2
     </div>
@@ -19,5 +23,29 @@
     <div id="div-5">
       I'm div #5
     </div>
+    <button type="button" name="button">CLICK ME</button>
+
+    <script type="text/javascript">
+    // VANILLA JS VERSION
+    var btn = document.querySelector('button')
+    btn.addEventListener('click', changeColorToRed)
+    // JQUERY VERSION
+    $('btn').click(changeColorToRed)
+
+    //vanilla JS VERSION
+    var $divs = document.querySelectorAll('div')
+
+    for(i=0; i < divs.length; i++){
+      divs[i].addEventListener('mouseover',changeColorToRed)
+    }
+    // JQuery VERSION
+    $('div').mouseover(changeColorToRed)
+
+      function changeColorToRed(){
+        $(this).color('red')
+      }
+
+
+    </script>
   </body>
 </html>

@@ -2,7 +2,6 @@
 
 
 ## Preface
----
 What does it mean when program is written in a "Functional style?"
 
 Functional style programming is often explained using phrases like "functions as first-class objects" and "eliminating side effects". To programmers just starting their JS journey, statements like these can be daunting!
@@ -14,7 +13,6 @@ There are really only two concepts that need to be understood to get a handle on
 In the simplest terms, the real benefit of adopting a functional style is that our programs can be broken down into smaller, simpler pieces that are both more reliable and easier to understand.
 
 ## Functional vs Imperative
----
 
 ### Imperative
 

@@ -50,25 +50,25 @@
 // Every time we make a player, that player has closure over their OWN health variable
 // They all have their own instanced version of that health variable
 // Encapsulation
-function makePlayer (name){
-	var health = 100;
-	var playerName = name;
+// function makePlayer (name){
+// 	var health = 100;
+// 	var playerName = name;
 
-	return function(damage){
-		health -= damage;
+// 	return function(damage){
+// 		health -= damage;
 		
-		if( health <= 0){
-			console.log(playerName + ' got rekt')
-		}
-		else{
-			console.log(playerName + ' has ' + health + 'hp left')
-		}
-	}
-}
+// 		if( health <= 0){
+// 			console.log(playerName + ' got rekt')
+// 		}
+// 		else{
+// 			console.log(playerName + ' has ' + health + 'hp left')
+// 		}
+// 	}
+// }
 
-var bananaFuton = makePlayer('bananaFuton');
-// bananaFuton(20);
-var george = makePlayer('george');
+// var bananaFuton = makePlayer('bananaFuton');
+// // bananaFuton(20);
+// var george = makePlayer('george');
 
 
 

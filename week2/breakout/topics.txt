@@ -1,0 +1,20 @@
+Closure (how to take advantage / screw yourself)
+Approach to creating a website from scratch
+	Object Oriented programming in JS
+
+Puzzle Pieces - MEAN stack
+
+Functional Programming - when it's appropriate
+	Arithmetic
+	Creating NEW sets of data without changing the OLD data
+	Data transformation = [
+		street address -> lat/lng,
+		charts/graphs,
+	]
+NON-Functional (destructive)
+myArr  => ['dog', 'cat', 'mouse', 'parrot']
+var change = myArr.splice(0, 3, 'T-rex', 'Snake')
+change => ['dog', 'cat', 'mouse']
+myArr  => ['parrot', 'T-rex', 'Snake']
+
+Angular - intro

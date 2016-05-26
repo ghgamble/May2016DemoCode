@@ -1,0 +1,66 @@
+Closure (how to take advantage / screw yourself)
+	- See main.js
+
+Approach to creating a website from scratch (context of midterm or similar application)
+	
+	DISCOVERY
+		- Most websites are NOT just static content
+			- What features need to go into your application?
+			- What do users need to be able to do?  What does an average use case look like? (
+				Recipe app : 
+					Users need to be able to look for and see recipes.  
+					Users need to be able to create and share recipes
+				)
+		- Storyboard / User Stories
+			- Tied to your feature list
+			- Stories about what a user should be able to do
+				(As a USER I need to be able to ...)
+			- MAY want to separate into CORE vs NICE TO HAVE
+	
+	DO IT (building ALL the things)
+		- UI/UX planning
+			- Sketching out UI components you need to build (
+				Recipe App : 
+					search,
+					add a recipe,
+					buttons,
+					modals,
+					etc
+			)
+			- Colors, fonts, layout, etc 
+			- Sketch, Autodesk Graphic, Adobe Fireworks, PixelMator, GIMP, Invision, Balsamiq
+			- Finalize designs, styleguide
+
+		- Dev
+			- Organizing a hierarchy of importance based on your feature list.  Work on the CORE first, then the NICE TO HAVE
+			
+			- Pick a page and start with it (homepage?)
+				- A simpler page will allow you to focus on the HTML layout and CSS styling so that you can be consistent throughout your app.
+
+			- From here people diverge
+				- May want to do ALL HTML/CSS before adding JS
+				- May want to work on a component by component basis (styling the search bar and making it functional while the rest of the page stays unstyled)
+
+
+
+
+
+
+
+Puzzle Pieces - MEAN stack
+
+Functional Programming - when it's appropriate
+	Arithmetic
+	Creating NEW sets of data without changing the OLD data
+	Data transformation = [
+		street address -> lat/lng,
+		charts/graphs,
+	]
+NON-Functional (destructive)
+myArr  => ['dog', 'cat', 'mouse', 'parrot']
+var change = myArr.splice(0, 3, 'T-rex', 'Snake')
+change => ['dog', 'cat', 'mouse']
+myArr  => ['parrot', 'T-rex', 'Snake']
+
+Object Oriented programming in JS
+Angular - intro

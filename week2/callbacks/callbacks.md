@@ -10,14 +10,17 @@ Callbacks typically:
 #### Defining a NAMED Callback function
 
 ```javascript
-    function buttonClicker(days){
-        return function(){
-            days.reduce(function(memo, el){
-                console.log(memo, el);
-            }, 30);
-        }
+    var button1 = document.getElementById('alertButton1'),
+        button2 = document.getElementById('alertButton2');
+    // anonymous callback
+    button.addEventListener('click', function(){
+        alert('(ノಠ益ಠ)ノ彡┻━┻');
+    });
+    // named callback
+    function adventureTime() {
+        alert('ʕ •̀ o •́ ʔ');
     }
-    button.addEventListener('click', buttonClicker(days))
+    button.addEventListener('click', adventureTime);
 ```
 
 #### Try It!

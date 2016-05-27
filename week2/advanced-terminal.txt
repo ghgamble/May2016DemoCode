@@ -1,0 +1,53 @@
+~/.bash_profile
+    executes every time you open a new terminal
+    good place for customizing your terminal environment
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+alias - set up one command to run another command
+    alias lsa="ls -a"
+    alias subl="open -a '/Applications/Sublime Text 2.app'"
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+variables 
+    local var: greeting="hello bash"
+    echo greeting
+    echo $greeting
+    touch $greeting
+    touch "$greeting"
+    environment var: export port=3000
+    put it in your .bash_profile to make it permanent
+    console.log(process.env.port)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+function - like alias, but better!
+    function can
+        {
+            cp -r "$1" ~/.Trash
+            rm -r "$1"
+        }
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+use $ to insert other expressions
+    echo ls
+    echo $(ls)
+
+automatic backup:
+    function backup
+    {
+            cp -r "$1" "$HOME/backup/"
+            mv "$HOME/backup/$(basename $1)" "$HOME/backup/$(basename $1)_$(date)"
+    }
+
+=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=
+
+grep - find a line of text with given contents
+
+    grep alias ~/.bash_profile
+
+shell redirection - use output from one command as input to another
+    ls | grep 
+
+use output from one command to write to a file
+    node logger.js > logs.txt
+    node logger.js >> logs.txt

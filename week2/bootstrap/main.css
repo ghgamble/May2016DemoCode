@@ -1,0 +1,16 @@
+.btn{
+	/*padding:0;*/
+}
+.btn-superGreen{
+	background-color:rgb(0,255,0);
+}
+
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+.color{
+	background-color:#A73fb6;
+}

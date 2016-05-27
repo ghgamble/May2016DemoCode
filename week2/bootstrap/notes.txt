@@ -1,0 +1,46 @@
+Bootstrap!
+
+	- CSS framework
+		- Essentially just a bunch of class selectors with pre-defined CSS rules
+		- Focused on responsive and mobile-first development
+
+	- Lots of components
+		- Normalization (standardizes the way some elements look by default - Normalize.css)
+		- Typography - Fonts, sizes, etc
+		- Layout     - Grid system
+		- Forms
+		- Buttons
+
+Grid System
+	- 12 column layout
+		12/12 columns => 100% width
+		6/12  columns => 50% width
+
+		You will be specifying how many columns (how wide) an element takes up
+
+	- Grid system has a specific layout
+		- You NEED to have these classes in order for the grid to work
+
+			1. .container / .container-fluid
+			2. .row
+			3. .col-*-* (.col-SCREENSIZE-COLUMNS)
+
+		- Column Classes
+			.col-xs-8 => on xs screens and up, 8/12 columns
+			Screen sizes : xs, sm, md, lg
+			columns : 1 - 12
+
+			*** YOU CAN USE MULTIPLE COLUMN CLASSES ON AN ELEMENT!!!  YOU OFTEN WILL! ***
+
+		NOT centered by default
+		Row heights are the height of the TALLEST column
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-8 col-lg-6"></div>
+
+		</div>
+
+	</div>

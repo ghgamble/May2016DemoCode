@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="toDoList" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style >
+        .line{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body class="container" ng-controller="todoController as todo">
+
+    <h1 class="jumbotron text-center">{{ todo.title }}</h1>
+    <label>To Do Item:</label>
+    <input type="text" ng-model="todo.newItem.name">
+    <input type="checkbox" ng-model="todo.newItem.complete">
+    <button type="button" ng-click="todo.addItem()" name="button">Add Item</button>
+    <div class="row">
+        <ul>
+            <li ng-repeat="item in todo.items"><p ng-class="{line:item.complete}">{{item.name}}</p> | <input type="checkbox" ng-model="item.complete"></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

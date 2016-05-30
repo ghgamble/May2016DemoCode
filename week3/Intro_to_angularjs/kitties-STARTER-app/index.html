@@ -11,19 +11,24 @@
 
 	</head>
 
-	<body>
+	<body >
 	<div id="container" ng-controller="KittiesController as kitties">
 		<div class="left-container">
 			<h1>Kitties for Adoption</h1>
-			<div class="dashed" ng-repeat="k in kitties.kittiesList | filter: k.adopted = false">
+			<div class="dashed" ng-repeat="k in kitties.kittiesList  | filter: k.adopted = false track by $index">
 				<p>{{ k.catName}}</p>
 				<p>Adopt me?<input type="checkbox" ng-model="k.adopted"></p>
+				<p>
+					{{ k.friends[0] }}
+				</p>
+				<button style="background-color: blue" type="button" name="button" ng-click="kitties.destroy(k)">Destroy Cat</button>
 			</div>
 
 		</div>
 
 
 	</div>
+
 
     		<!--Sourcing Angular-->
 		<!-- Source in module -->

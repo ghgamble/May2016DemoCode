@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html ng-app="kittiesApp">
+	<head>
+
+		<title>Kitties App!</title>
+
+
+		<link rel="stylesheet" href="css/style.css">
+
+
+	</head>
+
+	<body>
+	<div id="container" ng-controller="KittiesController as kitties">
+		<div class="left-container">
+			<h1>Kitties for Adoption</h1>
+			<div class="dashed" ng-repeat="k in kitties.kittiesList | filter: k.adopted = false">
+				<p>{{ k.catName}}</p>
+				<p>Adopt me?<input type="checkbox" ng-model="k.adopted"></p>
+			</div>
+
+		</div>
+
+
+	</div>
+
+    		<!--Sourcing Angular-->
+		<!-- Source in module -->
+
+		<!-- Source in controller -->
+
+	<script type="text/javascript" charset="utf-8" src="js/angular.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/KittiesController.js"></script>
+	</body>
+</html>

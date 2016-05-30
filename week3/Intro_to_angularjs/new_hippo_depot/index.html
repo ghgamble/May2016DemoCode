@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Intro To Angular</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+</head>
+
+<body class="container" ng-controller="myController as myCtrl">
+  <h1 ng-show="myCtrl.show" class="jumbotron text-center">Big Hippo Depot</h1>
+  <label>Search:</label>
+  <input type="text" ng-model="search">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{ myCtrl.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="hippo in myCtrl.hippos | filter:search | orderBy:hippo">
+        <td>{{hippo}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="" ng-controller="secondController">
+    {{ name }}
+  </div>
+  <button type="button" name="button" ng-click="myCtrl.myfunc()">Toggle H1</button>
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

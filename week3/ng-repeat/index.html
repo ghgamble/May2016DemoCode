@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="PBnJ">
+<head>
+	<title>NG-REPEATS!</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body ng-controller="butterKnife as bk">
+	<h1>Welcome to {{bk.storeName}}</h1>
+
+	<!-- ngRepeat is a directive that allows us to create HTML ONCE and have it REPEATED for every item in a LIST -->
+
+	<!-- bk.sandwiches[i] => sandwich -->
+	<!-- ng-repeat="ITEM in LIST" => most often: OBJ in ARR -->
+
+	<div ng-repeat="(sandwichIndex, sandwich) in bk.sandwiches">
+		<h3>{{sandwich.name}} - {{sandwichIndex}}</h3>
+		<p>Bread : {{sandwich.bread}}</p>
+		<p>Nutbutter : {{sandwich.nutButter}}</p>
+		<p>Jelly : {{sandwich.jelly}}</p>
+		<ul>
+			Extras : 
+			<li ng-repeat="ingredient in sandwich.extraIngredients" ng-click="bk.removeIngredient($index, sandwichIndex)">
+				{{ingredient}} - {{$index}} - {{sandwichIndex}}
+			</li>
+			
+		</ul>
+		<hr>
+	</div>
+
+
+</body>
+</html>

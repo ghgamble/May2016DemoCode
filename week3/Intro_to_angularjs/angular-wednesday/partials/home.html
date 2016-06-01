@@ -1,0 +1,10 @@
+<div>
+    <h1>Home</h1>
+    <h2>{{ andrew.title }}</h2>
+    <input type="text" ng-model="andrew.name" placeholder="Name"/>
+    <h3>{{ andrew.name }}</h3>
+    <button ng-click="andrew.show()">Happy Click!</button>
+    <div class="mouse" ng-mouseover="andrew.happyMouse($event)">MOUSE-OVER</div>
+    <div class="mouse" ng-mouseenter="andrew.sadMouse($event)">MOUSE-ENTER</div>
+    <div class="mouse" ng-mouseleave="andrew.mickeyMouse($event)">MOUSE-LEAVE</div>
+</div>

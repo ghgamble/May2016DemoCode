@@ -18,8 +18,19 @@
 	<hr>
 	<div ng-controller="SoySauce as soy">
 		Admin Backend Tool
+		<input type="text" ng-model="soy.giraffe">
 		<ul>
-			<li ng-repeat="item in soy.menuItems | orderBy:'name':true">
+			<!-- <li ng-repeat="item in soy.menuItems | orderBy:'name':true">
+				{{item.name}} - {{item.price}} - {{$index}}
+			</li> -->
+
+			<!-- Custom Filter Function -->
+			<!-- <li ng-repeat="item in soy.menuItems | filter:soy.cheapItems">
+				{{item.name}} - {{item.price}} - {{$index}}
+			</li> -->
+
+			<!-- Simple Search -->
+			<li ng-repeat="item in soy.menuItems | filter:soy.giraffe">
 				{{item.name}} - {{item.price}} - {{$index}}
 			</li>
 		</ul>

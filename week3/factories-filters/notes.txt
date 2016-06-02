@@ -1,0 +1,16 @@
+Factories
+	- Another component in Angular
+	- Registered to a MODULE just like a CONTROLLER
+	angular.module('~~~').factory()
+
+	- What are Factories used for?
+		- Most often used to hold DATA or common METHODS
+		- Can be used in multiple CONTROLLERS
+
+		- Controllers CANNOT communicate with one another
+			-	Factories can be used to SHARE information between controllers
+
+	- Factories are SINGLETONS (only ever created ONCE)
+		- Passed by REFERENCE anywhere they are INJECTED
+
+

@@ -11,7 +11,7 @@
 		Customer Facing Site
 		<ul>
 			<li ng-repeat="item in ket.menuItems">
-				{{item.name}} - {{item.sauce}}
+				{{item.name}} - {{item.price | currency}} - {{$index}}
 			</li>
 		</ul>
 	</div>
@@ -19,8 +19,8 @@
 	<div ng-controller="SoySauce as soy">
 		Admin Backend Tool
 		<ul>
-			<li ng-repeat="item in soy.menuItems">
-				{{item.name}} - {{item.sauce}}
+			<li ng-repeat="item in soy.menuItems | orderBy:'name':true">
+				{{item.name}} - {{item.price}} - {{$index}}
 			</li>
 		</ul>
 	</div>

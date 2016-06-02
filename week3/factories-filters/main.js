@@ -10,7 +10,7 @@ function ketchupCtrl (SauceFactory, $timeout){
 	console.log('hi from ketchup', SauceFactory);
 	var ket = this;
 	ket.greeting = "Sugar and fake blood";
-	
+
 	// exposing a piece of SauceFactory to the view
 	ket.menuItems = SauceFactory.data;
 	
@@ -30,7 +30,8 @@ function soysauceCtrl (SauceFactory, $timeout){
 		soy.menuItems.push({
 			name : 'TofuKetchup Medley',
 			sauce : "Catsup",
-			mainIngredient : 'Tofurkey'
+			mainIngredient : 'Tofurkey',
+			price : .98
 		})
 	}
 
@@ -47,17 +48,20 @@ function sauceFactory (){
 		{
 			name : 'French Fries',
 			sauce : 'Ketchup',
-			mainIngredient : '\'Taters'
+			mainIngredient : '\'Taters',
+			price : 6000
 		},
 		{
 			name : 'Dumplings',
 			sauce : 'SoySauce',
-			mainIngredient : 'Pigeon'
+			mainIngredient : 'Pigeon',
+			price : 7.5
 		},
 		{
 			name : 'SoySauce Carrot stuff',
 			sauce : 'SoySauce',
-			mainIngredient : 'Carrots'
+			mainIngredient : 'Carrots',
+			price : 4.99
 		}
 	]
 

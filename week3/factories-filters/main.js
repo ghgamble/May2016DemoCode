@@ -4,21 +4,37 @@ angular.module('SauceApp', [])
 angular.module('SauceApp')
 	.controller('Ketchup', ketchupCtrl)
 
-function ketchupCtrl (){
-	console.log('hi from ketchup');
+ketchupCtrl.$inject = ['SauceFactory', '$timeout'];
+function ketchupCtrl (SauceFactory, $timeout){
+	// the value of SauceFactory is EXACTLY what you returned from the factory
+	console.log('hi from ketchup', SauceFactory);
 	var ket = this;
 	ket.greeting = "Sugar and fake blood";
+	
+	// exposing a piece of SauceFactory to the view
+	ket.menuItems = SauceFactory.data;
 	
 }
 // =============Controller File ^^================== \\
 
 angular.module('SauceApp')
-	.controller('SoySauce', soysauceCtrl)
+	.controller('SoySauce', ['SauceFactory', '$timeout',soysauceCtrl])
 
-function soysauceCtrl (){
-	console.log('hi from soysauce');
+function soysauceCtrl (SauceFactory, $timeout){
+	console.log('hi from soysauce', SauceFactory);
 	var soy = this;
 	soy.greeting = "Sodium and pigeons blood";
+	soy.menuItems = SauceFactory.data;
+
+	function newItem(){
+		soy.menuItems.push({
+			name : 'TofuKetchup Medley',
+			sauce : "Catsup",
+			mainIngredient : 'Tofurkey'
+		})
+	}
+
+	$timeout(newItem, 3000)
 
 }
 // =============Controller File ^^================== \\

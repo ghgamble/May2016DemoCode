@@ -11,6 +11,6 @@ Factories
 			-	Factories can be used to SHARE information between controllers
 
 	- Factories are SINGLETONS (only ever created ONCE)
-		- Passed by REFERENCE anywhere they are INJECTED
+		- Passed by REFERENCE anywhere they are INJECTED (tend to be injected into controllers or OTHER factories)
 
 

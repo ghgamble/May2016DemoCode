@@ -15,6 +15,7 @@
 		class="marker" 
 		ng-repeat="marker in nug.markers"
 		style="top:{{marker.y}}%;left:{{marker.x}}%;"
+		ng-click="nug.removeMarker(marker)"
 	>
 		
 	</div>

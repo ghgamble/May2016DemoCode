@@ -23,4 +23,9 @@ function nugCtrl(){
 
 		console.log(nug.markers)
 	}
+
+	nug.removeMarker = function(marker){
+		nug.markers.splice(nug.markers.indexOf(marker), 1);
+
+	}
 }

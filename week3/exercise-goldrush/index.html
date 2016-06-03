@@ -11,7 +11,13 @@
 	<img id="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true" ng-click="nug.createMarker($event)">
 
 	<!-- We need to show multiple markers on the map : ngRepeat -->
-	<div class="marker" ng-repeat=""></div>
+	<div 
+		class="marker" 
+		ng-repeat="marker in nug.markers"
+		style="top:{{marker.y}}%;left:{{marker.x}}%;"
+	>
+		
+	</div>
 
 
 

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="GoldRush">
 <head>
 	<title>Get yir gold pardners!</title>
 	 <link rel="stylesheet" type="text/css" href="main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
 </head>
-<body>
+<body ng-controller="nuggetController as nug">
 
-	
-	<img id="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true">
+	<!-- We need to access a click event from the user and utilize the information from that event : ngClick -->
+	<img id="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true" ng-click="nug.createMarker($event)">
+
+	<!-- We need to show multiple markers on the map : ngRepeat -->
+	<div class="marker" ng-repeat=""></div>
+
 
 
 <script src="app.js"></script>

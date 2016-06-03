@@ -11,6 +11,7 @@ configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
         templateUrl: 'partials/home.html',
         controller: 'homeCtrl as hCtrl'
       })
+    $urlRouterProvider.otherwise('/')
   }
 
   //controller function

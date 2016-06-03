@@ -1,6 +1,6 @@
 angular.module('routerApp',['ui.router'])
   .config(configRouter)
-
+  .controller('homeCtrl', homeController)
 configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
 
 
@@ -11,4 +11,10 @@ configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
         templateUrl: 'partials/home.html',
         controller: 'homeCtrl as hCtrl'
       })
+  }
+
+  //controller function
+  function homeController(){
+    var hCtrl = this
+    hCtrl.title = "Home Controller"
   }

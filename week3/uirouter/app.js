@@ -1,6 +1,7 @@
 angular.module('routerApp',['ui.router'])
   .config(configRouter)
   .controller('homeCtrl', homeController)
+  .controller('loginCtrl', loginController)
 configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
 
 
@@ -11,6 +12,11 @@ configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
         templateUrl: 'partials/home.html',
         controller: 'homeCtrl as hCtrl'
       })
+      .state('login',{
+        url: '/login',
+        templateUrl: 'partials/login.html',
+        controller: 'loginCtrl as lCtrl'
+      })
     $urlRouterProvider.otherwise('/')
   }
 
@@ -18,4 +24,8 @@ configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
   function homeController(){
     var hCtrl = this
     hCtrl.title = "Home Controller"
+  }
+  function loginController(){
+    var lCtrl = this
+    lCtrl.title = "Login Controller"
   }

@@ -3,6 +3,7 @@ angular.module('routerApp',['ui.router'])
   .controller('homeCtrl', homeController)
   .controller('loginCtrl', loginController)
 configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
+loginController.$inject = ['$state']
 
 
   function configRouter($stateProvider, $urlRouterProvider){
@@ -25,7 +26,11 @@ configRouter.$inject = ['$stateProvider', '$urlRouterProvider']
     var hCtrl = this
     hCtrl.title = "Home Controller"
   }
-  function loginController(){
+  function loginController($state){
     var lCtrl = this
     lCtrl.title = "Login Controller"
+    lCtrl.login = function(){
+      //some ajax call
+      $state.go('home')
+    }
   }

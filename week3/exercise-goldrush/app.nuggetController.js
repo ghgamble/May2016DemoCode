@@ -6,6 +6,7 @@ function nugCtrl(){
 	var nug = this;
 	// console.log('!');
 	nug.markers = []; // This will be our marker collection
+	nug.addingTooltip = false; // Decides whether or not our tooltip form is showing
 
 	// Triggered by our ngClick on the map
 	nug.createMarker = function(event){
@@ -22,10 +23,19 @@ function nugCtrl(){
 		nug.markers.push(newMarker);
 
 		console.log(nug.markers)
+
+		nug.addingTooltip = true;
 	}
 
 	nug.removeMarker = function(marker){
 		nug.markers.splice(nug.markers.indexOf(marker), 1);
 
+	}
+
+	// submitting tooltip and attaching it to the marker
+	nug.addTooltip = function(){
+		nug.markers[nug.markers.length - 1].tooltip = nug.tooltipText;
+		nug.tooltipText = '';
+		nug.addingTooltip = false;
 	}
 }

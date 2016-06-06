@@ -1,28 +1,3 @@
-angular.module('SauceApp', [])
-// ==============Module File ^^================= \\
-
-angular.module('SauceApp')
-	.controller('Ketchup', ketchupCtrl)
-
-function ketchupCtrl (){
-	console.log('hi from ketchup');
-	var ket = this;
-	ket.greeting = "Sugar and fake blood";
-	
-}
-// =============Controller File ^^================== \\
-
-angular.module('SauceApp')
-	.controller('SoySauce', soysauceCtrl)
-
-function soysauceCtrl (){
-	console.log('hi from soysauce');
-	var soy = this;
-	soy.greeting = "Sodium and pigeons blood";
-
-}
-// =============Controller File ^^================== \\
-
 angular.module('SauceApp')
 	.factory('SauceFactory', sauceFactory)
 
@@ -31,17 +6,20 @@ function sauceFactory (){
 		{
 			name : 'French Fries',
 			sauce : 'Ketchup',
-			mainIngredient : '\'Taters'
+			mainIngredient : '\'Taters',
+			price : 6000
 		},
 		{
 			name : 'Dumplings',
 			sauce : 'SoySauce',
-			mainIngredient : 'Pigeon'
+			mainIngredient : 'Pigeon',
+			price : 7.5
 		},
 		{
 			name : 'SoySauce Carrot stuff',
 			sauce : 'SoySauce',
-			mainIngredient : 'Carrots'
+			mainIngredient : 'Carrots',
+			price : 4.99
 		}
 	]
 

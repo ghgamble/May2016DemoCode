@@ -4,23 +4,39 @@
 	<title>Factories and Filters!</title>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
 
-	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="app.ketchupCtrl.js"></script>
+	<script type="text/javascript" src="app.soysauceCtrl.js"></script>
+	<script type="text/javascript" src="app.sauceFactory.js"></script>
+
+
 </head>
 <body> 
 	<div ng-controller="Ketchup as ket">
 		Customer Facing Site
 		<ul>
 			<li ng-repeat="item in ket.menuItems">
-				{{item.name}} - {{item.sauce}}
+				{{item.name}} - {{item.price | currency}} - {{$index}}
 			</li>
 		</ul>
 	</div>
 	<hr>
 	<div ng-controller="SoySauce as soy">
 		Admin Backend Tool
+		<input type="text" ng-model="soy.giraffe">
 		<ul>
-			<li ng-repeat="item in soy.menuItems">
-				{{item.name}} - {{item.sauce}}
+			<!-- <li ng-repeat="item in soy.menuItems | orderBy:'name':true">
+				{{item.name}} - {{item.price}} - {{$index}}
+			</li> -->
+
+			<!-- Custom Filter Function -->
+			<!-- <li ng-repeat="item in soy.menuItems | filter:soy.cheapItems">
+				{{item.name}} - {{item.price}} - {{$index}}
+			</li> -->
+
+			<!-- Simple Search -->
+			<li ng-repeat="item in soy.menuItems | filter:soy.giraffe">
+				{{item.name}} - {{item.price}} - {{$index}}
 			</li>
 		</ul>
 	</div>

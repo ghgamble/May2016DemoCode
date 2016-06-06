@@ -14,3 +14,15 @@ Factories
 		- Passed by REFERENCE anywhere they are INJECTED (tend to be injected into controllers or OTHER factories)
 
 
+Filters
+
+	- Filters in Angular are typically used to FORMAT values
+		- dates, currency, numbers
+		- 1387540982 => Dec 13, 2004
+	- Using a filter in an Angular expression
+		{{EXPRESSION | FILTER:ARG1:ARG2:etc}}
+
+	- There are a few filters that are special and significantly affect ngRepeat
+		- orderBy => sorts and re-orders items
+		- filter  => conditionally shows/hides items
+

@@ -25,7 +25,7 @@ In JS, there are two ways to write comments:
 Comments are amazing! Write tons of them!
 
 ### Variables
-Variables **HOLD** values. Variables are created with the keyword `var` and assigned with the `=` operator.
+Variables refer to values. Variables are created with the keyword `var` and assigned with the `=` operator.
 
 ```javascript
     var foo;

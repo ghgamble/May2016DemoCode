@@ -10,6 +10,11 @@
 	<!-- We need to access a click event from the user and utilize the information from that event : ngClick -->
 	<img id="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true" ng-click="nug.createMarker($event)">
 
+	<form class="tooltip-form" ng-show="nug.addingTooltip">
+		<input ng-model="nug.tooltipText">
+		<input type="submit">
+	</form>
+	
 	<!-- We need to show multiple markers on the map : ngRepeat -->
 	<div 
 		class="marker" 

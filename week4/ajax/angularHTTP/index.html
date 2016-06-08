@@ -6,6 +6,11 @@
     <title>Poke Masters API Challenge</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+    li {
+      cursor: pointer;
+    }
+    </style>
   </head>
 
   <body >
@@ -15,13 +20,13 @@
     <button type="submit" name="button">Search for a Pokemon</button>
   </form>
 
-Name:
+Name: {{ pCtrl.currentPokemon.name }}
 <br>
-Id:
+Id: {{ pCtrl.currentPokemon.id }}
 
 <div class="">
   <ul>
-    <li ng-repeat="pokemon in pCtrl.pokedex">
+    <li ng-click="pCtrl.searchPokedex(pokemon.url)" ng-repeat="pokemon in pCtrl.pokedex">
       {{ pokemon.name }}
     </li>
   </ul>

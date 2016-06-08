@@ -1,37 +1,46 @@
 <DOCTYPE>
-<html ng-app='pokeApp'>
+  <html ng-app='pokeApp'>
+
   <head>
     <meta charset="utf-8">
 
     <title>Poke Masters API Challenge</title>
+    <!-- sha1 -->
+    <!-- <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script> -->
+    <!-- sha256 -->
+    <!-- <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src="oauth-1.0a.js"></script> -->
+    <script src="/bower_components/oauth-signature/dist/oauth-signature.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <script src="app.js"></script>
     <style>
-    li {
-      cursor: pointer;
-    }
+      li {
+        cursor: pointer;
+      }
     </style>
   </head>
 
-  <body >
-<div  ng-controller="pokeController as pCtrl" >
-  <form ng-submit="">
-    <input type="text" name="pokeName" ng-model="pCtrl.search">
-    <button type="submit" name="button">Search for a Pokemon</button>
-  </form>
+  <body>
+    <div ng-controller="pokeController as pCtrl">
+      <form ng-submit="">
+        <input type="text" name="pokeName" ng-model="pCtrl.search">
+        <button type="submit" name="button">Search for a Pokemon</button>
+      </form>
 
-Name: {{ pCtrl.currentPokemon.name }}
-<br>
-Id: {{ pCtrl.currentPokemon.id }}
+      Name: {{ pCtrl.currentPokemon.name }}
+      <br> Id: {{ pCtrl.currentPokemon.id }}
 
-<div class="">
-  <ul>
-    <li ng-click="pCtrl.searchPokedex(pokemon.url)" ng-repeat="pokemon in pCtrl.pokedex">
-      {{ pokemon.name }}
-    </li>
-  </ul>
-</div>
-</div>
+      <div class="">
+        <ul>
+          <li ng-click="pCtrl.searchPokedex(pokemon.url)" ng-repeat="pokemon in pCtrl.pokedex">
+            {{ pokemon.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
 
-</body>
-</html>
+  </body>
+
+  </html>

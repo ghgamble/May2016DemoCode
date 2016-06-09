@@ -77,7 +77,7 @@ var b = 'bro';
 // always use these. just always use these all the time everywhere.
 // +
 
-// concating
+// concatenating
 // adding strings together
 var sentence2 = d + ' ' + t + ' ' + m + ' ' + b;
 

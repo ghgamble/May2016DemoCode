@@ -1,0 +1,119 @@
+Promises - what are they?
+
+UI Router
+    - Multiple views with UI router / sub-views
+
+Handling APIs on the front end - architecture
+
+When to make multiple controllers vs one big one
+    - distinctive functionality : if a component's functionality can stand alone or is self-contained
+    - Common UI element that has its own methods / data
+
+
+$http.get('http://api.pokemon.com/v2/getpokemon')
+    .then(function(responseData){
+        ctrl.data = responseData
+
+        $http.post('/otherapi', responseData.postme)
+            .then(function(responseData2){
+
+                $http.post('/thirdapicall', responseData.postme)
+                    .then(function(responseData3){
+
+
+                    })
+
+            })
+
+    })
+
+
+
+Request / Response Cycle
+
+
+
+1. Client ===REQUEST===> Server (api, own server)
+        data, where
+
+
+2. Server does something with the REQUEST (retrieving data, creating /editing data, deleting data)
+
+
+3. Server ===RESPONSE===> Client
+                data
+
+4. Client calls the callback functions with data from the server (then, success, failure)
+
+controller.myDataArray = []
+$http.get('/someApi')
+    .then(function(){
+        // If you need to do something with the data RIGHT AWAY, it must be done in this function
+        respsonseData.forEach(function(item){
+            controller.myDataArray.push(item)
+        })
+
+        // Attaching event handler at a later point
+        // Not a good idea if the above api is hit multiple times
+        controller.onClick = function(){
+            controller.myDataArray
+        }
+
+    })
+console.log('After')
+
+// Checking length of data
+controller.onClick = function(){
+    if(controller.myDataArray.length){
+        controller.myDataArray
+    }
+}
+
+Angular factories are the perfect place to store both the API calls that you need to make and possible data you need to share among controllers
+Factories deal with the M in MVC (API calls to get data, storing data that was retrieved)
+
+angular.module('app')
+    .factory('myFactory', ['$http', function($http){
+
+        function getAlbum(albumName){
+            // step one
+            return $http.get('http://kanyerest.xyz/api/album/' + albumName)
+
+        }
+
+        return {
+            getAlbum : getAlbum
+        }
+    }])
+
+angular.module('app')
+    .controller('myController', ['myFactory', function(myFactory){
+        myFactory.getAlbum('graduation')
+            .then(function(responseData){
+                // step four
+            })
+    }])
+
+
+Recursive functions
+ - functions that call themselves
+ - often have something that can eventually STOP the recursion
+
+var number = 0
+ function addEmUp (){
+    
+    sortTheThings()
+    
+    if(!FullySorted){
+        addEmUp()
+    }
+
+ }
+
+
+
+                Frankie
+ |              |           |
+ Sally        Bill         Tim
+ |          |       |
+ George Adeline Charlies

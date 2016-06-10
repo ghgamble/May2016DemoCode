@@ -81,8 +81,14 @@ class Warlock extends Wizard{
 		super(warlockInfo);
 		this.demonMaster = warlockInfo.demonMaster;
 	}
+	static something(){
+		return 'yay!'
+	}
 	commune(){
 		return this.name + ' communes with ' + this.demonMaster + ' for moar powah!'
+	}
+	get fullName(){
+		return this.name + Math.random() + " Berkshire"
 	}
 	// Overriding an inherited proto method with one that calls the inherited proto plus some other things
 	castSpell(spellIndex){

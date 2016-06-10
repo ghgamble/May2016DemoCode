@@ -1,0 +1,21 @@
+Inheritance
+
+*'is a' relationships
+'has a' relationships
+
+Restaurant HAS A Menu
+Plate HAS (some) FoodItems
+
+Dog IS A Mammal
+King Charles Cavalier IS A Dog
+Whale IS A Mammal
+
+Inheritance is most often used with IS A relationships
+Create the inheritance chain top down (General -> Specific)
+
+*** DO NOT USE INHERITANCE JUST FOR THE HELL OF IT ***
+Only use inheritance to save yourself writing code
+
+In inheritance there are SUPER and SUB classes
+Wizard =>  Object is SUPER
+Object =>  Wizard is SUB

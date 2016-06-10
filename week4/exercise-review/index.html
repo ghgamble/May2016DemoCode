@@ -15,11 +15,21 @@
 
 		<div class="row">
 			
+			<!-- Diet Select -->
+			<div class="col-xs-12">
+				<select ng-model="ctrl.dietPref">
+					<option selected>Select your preference</option>
+					<option value="vegan">Vegan</option>
+					<option value="citrusFree">Citrus Free</option>
+					<option value="glutenFree">Gluten Free</option>
+				</select>
+
+			</div>
 
 			<div class="col-xs-8">
 				
 				<div class="row">
-					<div ng-repeat="plate in ctrl.restaurant.menu.plates" class="col-xs-6 menu-item" ng-click="ctrl.addToOrder(plate)">
+					<div ng-repeat="plate in ctrl.restaurant.menu.plates" class="col-xs-6 menu-item" ng-click="ctrl.addToOrder(plate)" ng-class="{'matches-diet' : plate.matchesDiet(ctrl.dietPref)}">
 						
 						<div class="row">
 							<div class="col-xs-12">{{plate.name}}</div>

@@ -15,4 +15,9 @@ function foodController(FoodFactory){
 		ctrl.currentOrder.plates.push(plate); // Pushing the clicked menu item into our order's plates array
 	}
 
+	// will not work, plateInfo isn't real
+	// ctrl.addPlate = function(plateInfo){
+	// 	FoodFactory.menu.plates.push(new FoodFactory.Plate(plateInfo))
+	// }
+
 }

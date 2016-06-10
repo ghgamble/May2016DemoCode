@@ -50,6 +50,7 @@ function foodFact(){
 
 	Order.prototype.totalPrice = function(){
 		return this.plates.reduce(function(total, plate){
+			// console.log('TOTAL', total, plate.price)
 			return total + plate.price
 		}, 0)
 	}
@@ -78,7 +79,7 @@ function foodFact(){
 
 	var burrito = new Plate('Burrito', 'A hearty meal.', 10, [tortilla, avocado, carne]);
 
-	var guacamole = new Plate('Guácomole', 'What chips were invented for.', 4, [avocado, onion, cilantro, lime]);
+	var guacamole = new Plate('Guacomole', 'What chips were invented for.', 4, [avocado, onion, cilantro, lime]);
 	var margarita = new Drink('Margarita', 'Delicious and makes you feel good.', 6, [tequila, triplesec, lime]);
 
 	var menu = new Menu([burrito, guacamole, margarita]);

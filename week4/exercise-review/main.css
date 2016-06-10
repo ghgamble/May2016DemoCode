@@ -1,0 +1,9 @@
+.menu-item{
+	border: thin solid grey;
+	transition: all 0.2s cubic-bezier(1,1.29,.26,-0.92);
+	min-height: 82px;
+}
+.menu-item:hover{
+	transform: rotateZ(2deg);
+	/*background-color:red;*/
+}

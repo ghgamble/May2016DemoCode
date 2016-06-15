@@ -1,5 +1,5 @@
 ;(function () {
-  angular.module('pokeApp', ['spotify'])
+  angular.module('pokeApp', ['spotify','angular-carousel'])
     .config(function (SpotifyProvider) {
       SpotifyProvider.setClientId('c79d6d2d5ac74b39a6048c4342d0fb7e')
       SpotifyProvider.setRedirectUri('http://localhost:8080')

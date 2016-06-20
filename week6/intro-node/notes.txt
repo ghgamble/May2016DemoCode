@@ -1,0 +1,33 @@
+NodeJS
+
+What is it?
+    - JavaScript runtime environment based on google's v8 engine
+    - Node allows us to run JavaScript in places other than the browser
+    - Commandline interface
+
+** REMEMBER! **
+console.logs are NOT output to the BROWSER
+they will be output to your TERMINAL or COMMAND LINE
+
+- Running the command `node` opens up a node REPL
+R : Read
+E : Evaluate
+P : Print
+L : Loop
+
+Ctrl + C (even on Mac/Linux) will kill most command line commands
+
+Differences Between Browser / NodeJS
+ - No window object / global namespace
+ - No document object (no DOM)
+ - console.logs go to the TERMINAL / COMMAND LINE
+
+ No Global namespace!? wtf?
+ - Node is based off of a module system
+
+Modules - How do we use them?
+ - require => allows us to pull a module into a file
+
+ 3 ways to access
+    1. Including CORE modules (fs, http)
+    

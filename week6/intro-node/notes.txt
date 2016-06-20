@@ -28,13 +28,27 @@ Differences Between Browser / NodeJS
 Modules - How do we use them?
  - require => allows us to pull a module into a file
 
- 3 ways to access
+ 3 ways to access using `require`
     1. Including CORE modules (fs, http)
-    2. ???
-    3. ???
+    2. Include our OWN modules and files (filepath, module.exports/require)
+    3. Third party modules - installed from npm (request, express)
 
 
 Our Node files can take arguments from the command line
 
     - functions have the `arguments` object
     - Node has the arguments VECTOR `process.argv`
+
+Require method is how we IMPORT modules to a file
+
+module.exports is the variable where we EXPORT information from a file
+
+When you REQUIRE a module, only THAT file has access to the module.  If you need access to a module in multiple files, you MUST require the module in EACH of those files
+
+
+
+NPM
+    Node Package Manager
+    It's where you'll find third party modules for you app
+
+    Also a CLI where you can download those modules and save a record of which ones your app uses

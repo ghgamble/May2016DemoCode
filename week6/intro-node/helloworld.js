@@ -20,3 +20,12 @@
 // Process object
 // console.log(process.memoryUsage()); // Memory usage
 // console.log(process.env); // Stores environment variables
+
+
+// Requiring our OWN modules
+var dock = require('./thedocks.js');
+
+console.log(dock.user.name);
+
+console.log(dock.moreStuff());
+

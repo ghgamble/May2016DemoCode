@@ -30,4 +30,11 @@ Modules - How do we use them?
 
  3 ways to access
     1. Including CORE modules (fs, http)
-    
+    2. ???
+    3. ???
+
+
+Our Node files can take arguments from the command line
+
+    - functions have the `arguments` object
+    - Node has the arguments VECTOR `process.argv`

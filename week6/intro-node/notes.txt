@@ -51,4 +51,15 @@ NPM
     Node Package Manager
     It's where you'll find third party modules for you app
 
-    Also a CLI where you can download those modules and save a record of which ones your app uses
+    Also a CLI where you can download those modules and save a record of which ones your app uses (package.json)
+
+    Setting up NPM for your project
+    1. npm init -> creates a package.json file
+    2. npm install MODULENAME --save -> installs module and saves it into the package.json
+
+    package.json
+    - Keeps track of installed modules your app depends on
+
+    - Common practice dictates you gitignore your node modules.  This is because your node_modules folder will get big and bloaty
+
+    - just running `npm install`  npm will read your package.json and install all the modules you saved

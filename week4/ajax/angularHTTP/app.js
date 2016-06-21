@@ -1,5 +1,5 @@
 ;(function () {
-  angular.module('pokeApp', ['spotify'])
+  angular.module('pokeApp', ['spotify','angular-carousel'])
     .config(function (SpotifyProvider) {
       SpotifyProvider.setClientId('c79d6d2d5ac74b39a6048c4342d0fb7e')
       SpotifyProvider.setRedirectUri('http://localhost:8080')
@@ -10,12 +10,16 @@
     // .controller('pokeController', ['$scope', '$log', function($log, $scope){}])
     .controller('pokeController', pokeCtrl)
     .factory('MyYelpAPI', yelpApi)
+    .factory('MyTwitAPI', twitApi)
 
-  pokeCtrl.$inject = ['$scope', '$http', 'MyYelpAPI', 'Spotify']
+  pokeCtrl.$inject = ['$scope', '$http', 'MyYelpAPI', 'Spotify','MyTwitAPI']
 
-  function pokeCtrl ($scope, $http, MyYelpAPI,Spotify) {
+  function pokeCtrl ($scope, $http, MyYelpAPI,Spotify,MyTwitAPI) {
     var pCtrl = this
     pCtrl.text = 'PokeApp'
+    MyTwitAPI.retrieveTwit('',function(data){
+      console.log(data)
+    })
     MyYelpAPI.retrieveYelp('', function (data) {
       console.log(data)
 
@@ -67,6 +71,35 @@
         }
         var consumerSecret = '4uXV53TabsI-kSyul7ZBqcuP9bs' // Consumer Secret
         var tokenSecret = '7yUzFe9aVz2fXFM20TigUZ5nrDU' // Token Secret
+        var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, {
+          encodeSignature: false
+        })
+        params['oauth_signature'] = signature
+        $http.jsonp(url, {
+          params: params
+        }).success(callback)
+      }
+    }
+  }
+
+  // Twitter Factory for requests
+  function twitApi ($http) {
+    return {
+      retrieveTwit: function (name, callback) {
+        var method = 'GET'
+        var url = 'https://api.twitter.com/1.1/users/search.json'
+        var params = {
+          oauth_consumer_key: 'MBkUf0Q63aBUtOVLJTKW17OPj', // Consumer Key
+          oauth_token: '204707730-8CUSGeMYidHhQyxBfgqA0M4u1MUx2XW0mtOEgssH', // Token
+          oauth_version: 1.0,
+          oauth_signature_method: 'HMAC-SHA1',
+          oauth_timestamp: new Date().getTime(),
+          oauth_nonce: randomString(32,'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        }
+        var consumerSecret = '9cTFVY80oU9JYB5hu1JmTlfNVdRuANuLGSuZ0rDdAeFCq3O0yT' // Consumer Secret
+        var tokenSecret = 'AG7TeyLsFK4opRrwyOy86qu0d4dbU8nccfaCWXQluNnYr' // Token Secret
+        // generates a RFC 3986 encoded, BASE64 encoded HMAC-SHA1 hash
+        // var encodedSignature = oauthSignature.generate(oauth)
         var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, {
           encodeSignature: false
         })

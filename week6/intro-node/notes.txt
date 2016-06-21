@@ -1,0 +1,65 @@
+NodeJS
+
+What is it?
+    - JavaScript runtime environment based on google's v8 engine
+    - Node allows us to run JavaScript in places other than the browser
+    - Commandline interface
+
+** REMEMBER! **
+console.logs are NOT output to the BROWSER
+they will be output to your TERMINAL or COMMAND LINE
+
+- Running the command `node` opens up a node REPL
+R : Read
+E : Evaluate
+P : Print
+L : Loop
+
+Ctrl + C (even on Mac/Linux) will kill most command line commands
+
+Differences Between Browser / NodeJS
+ - No window object / global namespace
+ - No document object (no DOM)
+ - console.logs go to the TERMINAL / COMMAND LINE
+
+ No Global namespace!? wtf?
+ - Node is based off of a module system
+
+Modules - How do we use them?
+ - require => allows us to pull a module into a file
+
+ 3 ways to access using `require`
+    1. Including CORE modules (fs, http)
+    2. Include our OWN modules and files (filepath, module.exports/require)
+    3. Third party modules - installed from npm (request, express)
+
+
+Our Node files can take arguments from the command line
+
+    - functions have the `arguments` object
+    - Node has the arguments VECTOR `process.argv`
+
+Require method is how we IMPORT modules to a file
+
+module.exports is the variable where we EXPORT information from a file
+
+When you REQUIRE a module, only THAT file has access to the module.  If you need access to a module in multiple files, you MUST require the module in EACH of those files
+
+
+
+NPM
+    Node Package Manager
+    It's where you'll find third party modules for you app
+
+    Also a CLI where you can download those modules and save a record of which ones your app uses (package.json)
+
+    Setting up NPM for your project
+    1. npm init -> creates a package.json file
+    2. npm install MODULENAME --save -> installs module and saves it into the package.json
+
+    package.json
+    - Keeps track of installed modules your app depends on
+
+    - Common practice dictates you gitignore your node modules.  This is because your node_modules folder will get big and bloaty
+
+    - just running `npm install`  npm will read your package.json and install all the modules you saved

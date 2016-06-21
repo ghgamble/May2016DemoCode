@@ -1,0 +1,16 @@
+what does "server side" actually mean?
+
+how do clients and servers communicate with HTTP? (hyper text transfer protocol)
+
+first, send a request to DNS (domain name system) servers, saying we're looking for google.com. The DNS servers tell us google's IP address. Then we can send an HTTP address to the IP address.
+
+Server gets 2 pieces of information:
+request type: GET, POST, PUT, DELETE
+requested url: homepage: /  
+about page: /about
+
+=-=-=-=-=- Building an express server =-=-=
+initialize project: npm init
+install express: npm install express
+
+install body-parser : npm install body-parser --save

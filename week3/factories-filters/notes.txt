@@ -1,28 +1,33 @@
-Factories
-	- Another component in Angular
-	- Registered to a MODULE just like a CONTROLLER
-	angular.module('~~~').factory()
+# Filters and Factories
 
-	- What are Factories used for?
-		- Most often used to hold DATA or common METHODS
-		- Can be used in multiple CONTROLLERS
+## Purpose
+The purpose of this lecture is to introduce students to filters and factories. After this lecture, students should feel comfortable with the following concepts:
+- Storing application data and low-level logic in factories, to share amongst multiple controllers, and to keep individual controllers as lean as possible.
+- Using filters to modify the presentation of data, without affecting the underlying data itself.
 
-		- Controllers CANNOT communicate with one another
-			-	Factories can be used to SHARE information between controllers
+## Lecture Notes
 
-	- Factories are SINGLETONS (only ever created ONCE)
-		- Passed by REFERENCE anywhere they are INJECTED (tend to be injected into controllers or OTHER factories)
+### Factories
+- Another component in Angular
+- Registered to a MODULE just like a CONTROLLER
+angular.module('~~~').factory()
+- What are Factories used for?
+	- Most often used to hold DATA or common METHODS
+	- Can be used in multiple CONTROLLERS
+	- Controllers CANNOT communicate with one another
+	-	Factories can be used to SHARE information between controllers
+- Factories are SINGLETONS (only ever created ONCE)
+	- Passed by REFERENCE anywhere they are INJECTED (tend to be injected into controllers or OTHER factories)
 
 
-Filters
+### Filters
 
-	- Filters in Angular are typically used to FORMAT values
-		- dates, currency, numbers
-		- 1387540982 => Dec 13, 2004
-	- Using a filter in an Angular expression
-		{{EXPRESSION | FILTER:ARG1:ARG2:etc}}
-
-	- There are a few filters that are special and significantly affect ngRepeat
-		- orderBy => sorts and re-orders items
-		- filter  => conditionally shows/hides items
+- Filters in Angular are typically used to FORMAT values
+	- dates, currency, numbers
+	- 1387540982 => Dec 13, 2004
+- Using a filter in an Angular expression
+	{{EXPRESSION | FILTER:ARG1:ARG2:etc}}
+- There are a few filters that are special and significantly affect ngRepeat
+	- orderBy => sorts and re-orders items
+	- filter  => conditionally shows/hides items
 

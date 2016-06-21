@@ -1,7 +1,7 @@
 ## Call, Apply, Bind
 > Ability to force a context (change scope) when calling a function
 
-`this` is NOT inherited like scope. It remains fixed at the window until it is shifted in certain ways
+`this` is NOT inherited like scope. It normally refers to the host object of a method (or the window, if there is no host object), unless it is shifted in certain ways.
 
 ### Metaphor:
 Pick two people (guy and girl). When the girl says "I throw coconuts," the "I" refers to her. When the guy references the sentence, "I" refers to him and the context of the girl is lost. If you just find a piece of paper that says "I throw coconuts" on the ground, there is no context, you have no idea who that is.

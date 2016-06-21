@@ -99,13 +99,13 @@
         var consumerSecret = '9cTFVY80oU9JYB5hu1JmTlfNVdRuANuLGSuZ0rDdAeFCq3O0yT' // Consumer Secret
         var tokenSecret = 'AG7TeyLsFK4opRrwyOy86qu0d4dbU8nccfaCWXQluNnYr' // Token Secret
         // generates a RFC 3986 encoded, BASE64 encoded HMAC-SHA1 hash
-        var encodedSignature = oauthSignature.generate(oauth)
+        // var encodedSignature = oauthSignature.generate(oauth)
         var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, {
           encodeSignature: false
         })
         params['oauth_signature'] = signature
         $http.jsonp(url, {
-          header: params
+          params: params
         }).success(callback)
       }
     }

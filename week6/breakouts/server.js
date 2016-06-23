@@ -42,11 +42,9 @@ app.get('/ok', function(req, res){
 
 app.listen(8999) // start the server
 
-
 var anon = function() {
     global.funkiton = 'yeeeeeeah!';
     // global.funkiton = 'yeeeeeeah!'
     // console.log(global)
 }
-
 anon()

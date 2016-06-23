@@ -1,11 +1,11 @@
-## REQ Objects
-
 ---
 title: Request bodies, queries, and params
 type: Lesson
 duration: "0:50"
 instructor: Brandon
 ---
+
+## REQ Objects
 
 ### keywords
 | *keyword*   | *example*                      |

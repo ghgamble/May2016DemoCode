@@ -12,17 +12,32 @@
                     form.book = {}
 
                     form.submit = function() {
-                        $http.post('/library/books', form.book)
-                            .then(form.success, form.error)
+                        $http
+                            .post('/library/books', form.book)
+                            .then(function(data){
+                                // success case
+                                console.info(data);
+                                form.status = "Success"
+                            }, function(error){
+                                // failure case
+                                console.error(error)
+                                form.status = "Epic fail :("
+                            });
                     }
-                    form.error = function(error) {
-                        console.error(error)
-                        form.status = "Epic fail :("
-                    }
-                    form.success = function(data) {
-                        console.info(data);
-                        form.status = "Success"
-                    }
+
+                    // alternatively, you can pull out the callbacks
+                    // $http.post('/library/books', form.book).then(form.success, form.error)
+
+                    // form.success = function(data) {
+                    //     // success case
+                    //     console.info(data);
+                    //     form.status = "Success"
+                    // }
+                    // form.error = function(error) {
+                    //     // error case
+                    //     console.error(error)
+                    //     form.status = "Epic fail :("
+                    // }
                 }]);
         </script>
     </head>
@@ -35,8 +50,8 @@
             <fieldset>
                 <label>Author</label>
                 <input type="text" placeholder="author" ng-model="form.book.author"/>
-                <p ng-model="form.status">{{ form.status }}</p>
             </fieldset>
+            <p ng-model="form.status">{{ form.status }}</p>
             <button type="button" ng-click="form.submit($event)">Submit</button>
         </form>
     </body>

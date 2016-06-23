@@ -54,7 +54,7 @@ Here is the URL split into its parts (parsed)
 ```
 
 - `POST | PUT` **Request body**
-    * http://localhost:8080/library/books
+    * [http://localhost:8080/library/books]
     * `payload` is in the `headers`
     * Lives at : `req.body`
 
@@ -90,7 +90,7 @@ Here is the URL split into its parts (parsed)
 The third object is independent of request type. It deals with what is entered into the URL. Parameters are essentially the `segments` of a URL's `path`.
 
 - `parameters` :: Dynamic URL segments
-    * http:/localhost:8080/library/book/:id
+    * [http://localhost:8080/library/book/:id]
     * Lives at : `req.params`
 
 Parameterized routes are dynamic; we can define `segments` in a URL to accept *ANY* value.

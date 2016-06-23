@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- DECLARE YOUR MAIN ANGULAR MODULE -->
+<html ng-app="foodApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Food App</title>
+  </head>
+  <!-- DEFINE YOUR CONTROLLER SCOPE USING CONTROLLER AS-->
+  <body ng-controller="homeCtrl as hCtrl">
+    <h1>Food App</h1>
+    <!-- CHECK FOR A WORKING CONTROLLER -->
+    {{ hCtrl.name }}
+    <!--  CREATE YOUR FORM TO SUBMIT DATA TO BACKEND ROUTES-->
+    <form ng-submit="hCtrl.submitPlate(hCtrl.newPlate)">
+      Name:<input type="text" name="name" ng-model="hCtrl.newPlate.name">
+      <br>
+      Category:<input type="text" name="category" ng-model="hCtrl.newPlate.category">
+      <br>
+      Price:<input type="number" name="price" ng-model="hCtrl.newPlate.price">
+      <button type="submit">Submit Plate</button>
+    </form>
+    <!-- MAIN ANGULAR SCRIPTS LOADED -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <!--  IMPORT ALL YOUR SEPERATE JS FILES BELOW -->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="homeController.js"></script>
+    <script type="text/javascript" src="foodFactory.js"></script>
+  </body>
+</html>

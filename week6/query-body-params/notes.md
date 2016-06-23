@@ -1,3 +1,5 @@
+## REQ Objects
+
 ---
 title: Request bodies, queries, and params
 type: Lesson
@@ -6,30 +8,30 @@ instructor: Brandon
 ---
 
 ### keywords
-| *keyword*   | *example*                    |
-|-------------|------------------------------|
-| protocol    | http, https                  |
-| hostname    | google.com, localhost        |
-| tld         | .com, .io, .org              |
-| path        | /dashboard/login             |
-| segments    | [ dashboard, login ]         |
-| querystring | ?page=5&order=desc&limit=100 |
+| *keyword*   | *example*                      |
+|-------------|--------------------------------|
+| protocol    | `http`, `https`                |
+| hostname    | `google.com`, `localhost`      |
+| tld         | `.com`, `.io`, `.org`          |
+| path        | `/dashboard/login`             |
+| segments    | `[ dashboard, login ]`         |
+| querystring | `?page=5&order=desc&limit=100` |
 
-> There are three major objects of interest on the request object.
+There are three major objects of interest on the request object.
 
 Two of these objects on the `req` object deal with data stored on different types of requests.
 
-*GET/POST/PUT/DELETE* (often referred to as METHODS) are the most common request types.
+**GET/POST/PUT/DELETE** (often referred to as METHODS) are the most common request types.
 
 - `GET` :: Query String
     * http://google.com?password=dragons
-    * ?password=dragons <<< that is the query string
-    * Lives at : req.query
+    * `?password=dragons` <<< that is the query string
+    * Lives at : `req.query`
 
 
 - `POST | PUT` ::  Request Body
     * http://google.com
-    * Lives at : req.body
+    * Lives at : `req.body`
 
 The third object is independent of request type. It deals with what is entered into the URL. Parameters are essentially the `segments` of a URL's `path`.
 

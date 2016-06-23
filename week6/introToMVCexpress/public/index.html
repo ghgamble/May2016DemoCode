@@ -10,6 +10,9 @@
     <h1>Food App</h1>
     <!-- CHECK FOR A WORKING CONTROLLER -->
     {{ hCtrl.name }}
+    <ul>
+      <li ng-repeat=" plate in hCtrl.plates">Name: {{plate.name}}</li>
+    </ul>
     <!--  CREATE YOUR FORM TO SUBMIT DATA TO BACKEND ROUTES-->
     <form ng-submit="hCtrl.submitPlate(hCtrl.newPlate)">
       Name:<input type="text" name="name" ng-model="hCtrl.newPlate.name">

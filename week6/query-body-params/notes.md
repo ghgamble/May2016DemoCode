@@ -22,7 +22,7 @@ instructor: Brandon
 There are three major properties of interest on the `req` object and two of these properties are only available on specific types of requests.
 
 - `GET` **Query string**
-    * [http://localhost:8080/library/books?title=Othello]()
+    * [http://localhost:8080/library/books?title=Othello](http://localhost:8080/library/books?title=Othello)
     * `?title="Hamlet` <<< that is the query string
     * Lives at: `req.query`
 
@@ -35,7 +35,7 @@ Given we have a route defined like so:
 ... and this request is sent to the server:
 
 ```
-    GET :: http://localhost:8080/library/books?title=Hamlet
+    GET :: http://localhost:8080/library/books?title=Othello
 ```
 
 Here is the URL split into its parts (parsed)
@@ -48,13 +48,13 @@ Here is the URL split into its parts (parsed)
     path: "/library/books",
     segments: ["library", "books"]
     query: {
-         title: "Hamlet"
+         title: "Othello"
     }
 }
 ```
 
 - `POST | PUT` **Request body**
-    * [http://localhost:8080/library/books]()
+    * [http://localhost:8080/library/books](http://localhost:8080/library/books)
     * `payload` is in the `headers`
     * Lives at : `req.body`
 
@@ -90,7 +90,7 @@ Here is the URL split into its parts (parsed)
 The third object is independent of request type. It deals with what is entered into the URL. Parameters are essentially the `segments` of a URL's `path`.
 
 - `parameters` :: Dynamic URL segments
-    * [http://localhost:8080/library/book/:id]()
+    * [(http://localhost:8080/library/book/1](http://localhost:8080/library/book/1)
     * Lives at : `req.params`
 
 Parameterized routes are dynamic; we can define `segments` in a URL to accept *ANY* value.

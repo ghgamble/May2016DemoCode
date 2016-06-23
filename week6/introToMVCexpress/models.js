@@ -1,4 +1,4 @@
-var plates = [
+var platesArray = [
   {
     name: 'Taco Salad',
     category: 'TexMEX',
@@ -11,3 +11,6 @@ var plates = [
   }
 ]
 // EXPORT PLATES ARRAY
+module.exports = {
+  plates : platesArray
+}

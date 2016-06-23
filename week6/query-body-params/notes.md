@@ -8,7 +8,7 @@ instructor: Brandon
 ## REQ Objects
 
 ### keywords
-| *keyword*   | *example*                      |
+| keyword     | example                        |
 |-------------|--------------------------------|
 | protocol    | `http`, `https`                |
 | hostname    | `google.com`, `localhost`      |
@@ -34,7 +34,9 @@ Given we have a route defined like so:
 
 ... and this request is sent to the server:
 
-    http://localhost:8080/library/books?title="Hamlet"
+```
+    GET :: http://localhost:8080/library/books?title="Hamlet"
+```
 
 Here is the URL split into its parts (parsed)
 
@@ -63,11 +65,13 @@ Given we have a route defined like so:
 ```
 
 ... and this `payload` is sent to the server:
-   
-   title=How%20to%20tell%20if%20your%20cat%20is%20plotting%20to%20kill%20you&author=The%20Oatmeal&published=2012
+
+```
+    POST :: title=How%20to%20tell%20if%20your%20cat%20is%20plotting%20to%20kill%20you&author=The%20Oatmeal&published=2012
+```
 
 Here is the URL split into its parts (parsed)
-    
+
 ```javascript
 {
     protocol: "http",    
@@ -75,7 +79,7 @@ Here is the URL split into its parts (parsed)
     port: 8080,
     path: "/library/books",
     segments: ["library", "books"]
-    body: { 
+    body: {
       title: "How to tell if your cat is plotting to kill you",
       author: "The Oatmeal",
       published: "2012"
@@ -100,7 +104,9 @@ Given we have a route defined like so:
 
 ... and this request is sent to the server:
 
-    http://localhost:8080/library/book/1
+```
+    GET :: http://localhost:8080/library/book/1
+```
 
 Here is the URL split into its parts (parsed)
 

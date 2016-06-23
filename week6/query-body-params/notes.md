@@ -35,7 +35,7 @@ Given we have a route defined like so:
 ... and this request is sent to the server:
 
 ```
-    GET :: [http://localhost:8080/library/books?title=Hamlet]()
+    GET :: http://localhost:8080/library/books?title=Hamlet
 ```
 
 Here is the URL split into its parts (parsed)
@@ -105,7 +105,7 @@ Given we have a route defined like so:
 ... and this request is sent to the server:
 
 ```
-    GET :: [http://localhost:8080/library/book/1]()
+    GET :: http://localhost:8080/library/book/1
 ```
 
 Here is the URL split into its parts (parsed)

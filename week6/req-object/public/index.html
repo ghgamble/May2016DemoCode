@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="post.demo">
+    <head>
+        <title>POST</title>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <script>
+            angular.module('post.demo', [])
+                .controller('formController', ['$http', function ($http) {
+                    var form = this
+
+                    form.status = ""
+                    form.book = {}
+
+                    form.submit = function() {
+                        $http.post('/library/books', form.book)
+                            .then(form.error, form.success)
+                    }
+                    form.error = function(error) {
+                        console.error(error)
+                        form.status = "Epic fail :("
+                    }
+                    form.success = function(data) {
+                        console.data(data);
+                        form.status = "Success"
+                    }
+                }]);
+        </script>
+    </head>
+    <body>
+        <form method="POST" ng-controller="formController as form">
+            <fieldset>
+                <label>Book Title</label>
+                <input type="text" placeholder="title" ng-model="form.book.title"/>
+            </fieldset>
+            <fieldset>
+                <label>Author</label>
+                <input type="text" placeholder="author" ng-model="form.book.author"/>
+                <p ng-model="form.status">{{ form.status }}</p>
+            </fieldset>
+        </form>
+    </body>
+</html>

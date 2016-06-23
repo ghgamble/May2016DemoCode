@@ -13,14 +13,14 @@
 
                     form.submit = function() {
                         $http.post('/library/books', form.book)
-                            .then(form.error, form.success)
+                            .then(form.success, form.error)
                     }
                     form.error = function(error) {
                         console.error(error)
                         form.status = "Epic fail :("
                     }
                     form.success = function(data) {
-                        console.data(data);
+                        console.info(data);
                         form.status = "Success"
                     }
                 }]);
@@ -37,6 +37,7 @@
                 <input type="text" placeholder="author" ng-model="form.book.author"/>
                 <p ng-model="form.status">{{ form.status }}</p>
             </fieldset>
+            <button type="button" ng-click="form.submit($event)">Submit</button>
         </form>
     </body>
 </html>

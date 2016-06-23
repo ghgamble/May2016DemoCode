@@ -8,8 +8,13 @@
       var fFactory = {}
       //SEND A REQUEST TO OUR SERVER AND RETURN A PROMISE
       fFactory.create = function(plate){
-        return $http.post('/api/plates', plate)
+        return $http.post('/api/v1/plates', plate)
       }
+
+      fFactory.all = function(){
+        return $http.get('/api/v1/plates')
+      }
+
 
       return fFactory
     }

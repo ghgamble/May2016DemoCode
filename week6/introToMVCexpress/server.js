@@ -12,7 +12,7 @@ var
 app.use(logger('dev')) // LOG ALL IN-COMING ROUTES
 app.use(bodyParser.json()) // PARSE ALL FORM DATA TO JSON
 app.use(bodyParser.urlencoded({extended: true})) // ALLOW URL-ENCODED TO BE PARSED
-//app.use(Express.static(path.join(__dirname, './public'))) // SERV YOUR PUBLIC FILES FOR THE FRONTEND
+app.use(Express.static(path.join(__dirname, './public'))) // SERV YOUR PUBLIC FILES FOR THE FRONTEND
 
 // MOUNT THE API ROUTES
 app.use('/api/v1', apiRoutes)

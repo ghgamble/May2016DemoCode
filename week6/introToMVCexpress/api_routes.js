@@ -5,6 +5,7 @@ var
 
 // USE THE EXPRESS ROUTER TO DECLARE ROUTES
 // app.get('/plates', func(){})
+// app.post('/plates', func)
     apiRouter.route('/plates')
       .get(ctrls.platesController.all)
       .post(ctrls.platesController.create)

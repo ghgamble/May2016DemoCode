@@ -1,5 +1,5 @@
 # CSS Layout
-> All elements in HTML can be styled and layed out with CSS properties. There are many CSS properties to learn, we are going to cover just a few to get you rolling.
+> All elements in HTML can be styled and laid out with CSS properties. There are many CSS properties to learn, we are going to cover just a few to get you rolling.
 
 You can set `properties` in CSS using `selectors`. Selectors refer to HTML elements on the page.
 

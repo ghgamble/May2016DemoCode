@@ -1,0 +1,20 @@
+{
+  "name": "pokemon-api",
+  "version": "0.0.1",
+  "description": "stuff",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pokemon"
+  ],
+  "author": "Everyone",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0"
+  }
+}

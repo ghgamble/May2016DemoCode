@@ -6,7 +6,7 @@ module.exports = {
       request('http://pokeapi.co/api/v2/pokemon', function(error, response, body) {
         if (!error && response.statusCode == 200) {
           console.log(body)
-          res.json(JSON.parse(body))
+          res.send(JSON.parse(body))
         }
       })
     }

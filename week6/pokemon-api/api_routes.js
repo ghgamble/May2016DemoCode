@@ -1,5 +1,6 @@
 var ctrl = require('./controller')
-var apiRouter = require('express').Router()
+var express = require('express')
+var apiRouter = express.Router()
 
 apiRouter.route('/pokemon')
   .get(ctrl.pokemonCtrl.all)

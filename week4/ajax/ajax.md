@@ -1,25 +1,10 @@
----
-title: AJAX with JS & $HTTP
-type: Lesson
-duration: "1:20"
-creator:
-    name: Tony
-    city: Boulder
-competencies: Browser JS Basics
----
+# AJAX with $HTTP
 
-# AJAX with JS & JQuery
-
-### Objectives
-
-- Implement an AJAX request with Vanilla JS
-- Implement a jQuery AJAX client for a simple REST service
+## Objectives
+- Implement a $HTTP AJAX client for a simple CRUD service
 - Reiterate the benefits of separation of concerns – API vs. Client
 
-### Preparation
-
-- Understand basics of JS
-- Understand HTTP verbs & the concept of RESTful JSON APIs
+##Lecture Notes
 
 ## What is AJAX? Introduction (20 mins)
 
@@ -58,7 +43,6 @@ We should all be HTTP experts by now!!
 
 ####HTTP Methods (the most common HTTP "verbs")
 
-Pair up with the person next to you.  We are going to spend the next 10 minutes researching the four most common HTTP methods and then we will discuss as a group.
 
 **GET**
 * GET requests ask a server for data and do not modify the data on the server.

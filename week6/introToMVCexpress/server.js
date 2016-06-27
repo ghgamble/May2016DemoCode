@@ -6,7 +6,14 @@ var
   logger     = require('morgan'),
   path       = require('path'),
   apiRoutes  = require('./api_routes'),//module.exports = apiRouter
-  port       = process.env.PORT || 1337
+  port       = process.env.PORT || 1337,
+  mongoose   = require('mongoose')
+
+//Create db connection
+mongoose.connect('mongodb://localhost/food_db', function(err){
+  if(err) console.log("Error connecting to mongodb")
+  if(!err) console.log("YOU HAVE CONNECTED TO THE MONG-GODS!")
+})
 
 // APPLY MIDDLEWARE
 app.use(logger('dev')) // LOG ALL IN-COMING ROUTES

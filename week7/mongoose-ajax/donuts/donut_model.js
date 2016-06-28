@@ -14,3 +14,27 @@ var donutSchema = mongoose.Schema({
 var Donut = mongoose.model('donut', donutSchema)
 
 module.exports = Donut
+
+// Sample donut1 (document)
+// {
+//     name: 'Oscar',
+//     holed: true,
+//     flavor: 'Spicey',
+//     filling: 'Jalepeno Jam',
+//     toppings: ['Chulula','Tequila','Worm'],
+//     price: 20,
+//     expiration: Date.now() + ( 60*60*24*7 ),
+//     calories: 755
+// }
+
+// Sample donut 2
+// {
+//     "name": 'Glazed Donut',
+//     "holed": true,
+//     "flavor": 'Glazed',
+//     "filling": '',
+//     "toppings": [''],
+//     "price": 1,
+//     "expiration": Date.now() + ( 60*60*24*7 ),
+//     "calories": 200
+// }

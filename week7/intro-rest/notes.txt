@@ -1,0 +1,76 @@
+REST
+ 	=> REpresentational State Transfer
+ 	An architectural style for creating scalable web services.  This makes different resources available to clients for consumption
+
+ 	* REST is NOT a specific technology, tool, or library
+
+ 	* Most basic concept in REST is called a RESOURCE
+ 		- A resource is any information that can be named (users, images, other data)
+
+ 		- Resources can be either 
+ 			COLLECTIONS  (/api/v2/users)
+ 		or 
+ 			SINGLETONS   (/api/v2/users/{USERID})
+
+ 		- Resources can be queried or modified by HTTP verbs
+ 			- GET
+ 			- POST
+ 			- PUT
+ 			- DELETE
+
+ 	- returns JSON data (not xml!)
+
+ 	- Statelessness
+ 		- Server doesn't keep track of clients from one request to the next
+ 		- Clients must supply all the relevant information the servers needs to respond to the request
+
+ 	- Using HTTP verbs
+
+ 		* idempotency - the idea that making multiple, identical, requests to the same endpoint will return the same result.
+
+ 		1.GET
+ 			- Idempotent
+ 			- Are typically 'safe', because we're just retrieving information, we're not modifying any resources
+
+ 		2.POST
+ 			- !Idempotent
+ 			- Used to create NEW resources
+ 		3.PUT
+ 			- Idempotent - multiple identical requests do NOT affect the data we get back / end result
+ 			- Used to modify existing resources
+ 		4.DELETE
+ 			- Idempotent
+ 			- Used for deleting resources
+
+ 	- Communicate with HTTP status codes
+ 		201 - created
+ 		204 - no content
+ 		304 - not modified
+
+ Example API
+ Nouns => Resources
+ Verbs => HTTP methods
+
+ URLs should have NOUNS
+
+ GET     /api/users
+ GET     /api/users/55
+ POST    /api/users
+ PUT     /api/users/55
+ DELETE  /api/users/55
+
+CRUD !== REST => true
+CRUD is just the 4 basic operations you can do with data / database
+
+
+== When to use / NOT use REST
+	1. Use REST to make resources (on your server) available to clients
+
+	2. Not all HTTP verbs make sense for every resource - only use the verbs you need
+		- maybe you don't need to expose the DELETE route
+
+	3. Dropbox : 
+		- used to have a GET route where the query string would get too large
+		- switched to a POST route (has a request body, not limited by num of characters)
+		- A lot of people argued that the REPORT http method would have been more restful
+			- REPORT isn't necessarily universally supported by most REST clients

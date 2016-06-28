@@ -17,8 +17,8 @@ mongoose.connect('mongodb://localhost/donuts',
     })
 
 // app.use(bodyParser()) // deprecated
-app.use( bodyParser.json() )
-app.use( bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger('dev'))
 app.use('/api/v0', apiRouter)
 

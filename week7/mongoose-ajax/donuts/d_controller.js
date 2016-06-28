@@ -2,7 +2,13 @@ var Donut = require('./donut_model')
 
 var donutController = {
     all: function( req, res ) {
-        // todo!
+        Donut.find({}, function(error, donuts){
+            if( error ) {
+                console.error('ERROR finding donuts:', error)
+            } else {
+                res.json( donuts )
+            }
+        })
     }
 }
 

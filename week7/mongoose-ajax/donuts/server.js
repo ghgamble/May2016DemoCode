@@ -7,7 +7,7 @@ var port = 8080
 
 var app = express()
 
-mongoose.connect('monogodb://localhost/donuts',
+mongoose.connect('mongodb://localhost/donuts',
     function( error ){
         if( error ) {
             console.error('ERROR starting mongoose!', error)

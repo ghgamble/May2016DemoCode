@@ -1,0 +1,19 @@
+REST is an architectural style for defining your routes
+
+
+Stateless - server doesn't need to remember clients between requests
+
+returns JSON data,
+
+sends meaningful status codes
+
+
+idempotency - an action is idempotent if performing that action once has the same result as performing it many times.
+
+PUT /users/{user_id} - I would expect this to be idempotent
+
+GET, PUT, DELETE are idempotent
+
+POST is not.
+
+POST /users {name : 'steve jobsniak', job : 'babysitter'}

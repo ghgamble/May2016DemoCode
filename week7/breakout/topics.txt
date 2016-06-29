@@ -1,0 +1,15 @@
+
+express error-handling
+
+
+data-modeling (embedded vs referencing?)
+
+
+wait for async calls before doing something else (promises)
+
+hacking
+
+mongoose-express review
+
+REST
+web scraping

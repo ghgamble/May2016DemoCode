@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost/donuts',
             console.log('Mongoose connected successfully')
         }
     })
-
+app.use(express.static(__dirname + '/public'))
 // app.use(bodyParser()) // deprecated
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

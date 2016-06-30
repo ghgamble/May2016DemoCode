@@ -1,5 +1,5 @@
 <h1>{{ donutCtrl.title}}</h1>
-<div class="row">
+<div ng-if="donutCtrl.create" class="row">
   <form class="col s12" ng-submit="donutCtrl.createDonut()">
     <div class="row">
       <div class="input-field col s6">
@@ -18,5 +18,28 @@
       </div>
     </div>
      <button type="submit" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
+  </form>
+</div>
+<div class="row" ng-if="donutCtrl.update">
+  <form class="col s12" ng-submit="donutCtrl.updateDonut()">
+    <div class="row">
+      <div class="input-field col s6">
+        <input ng-model="donutCtrl.currentDonut.name"  id="name" type="text" class="validate">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input ng-model="donutCtrl.currentDonut.picUrl" id="picUrl" type="text" class="validate">
+        <label for="picUrl">Picture URL</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input ng-model="donutCtrl.currentDonut.price" id="price" type="number" class="validate">
+        <label for="price">Price</label>
+      </div>
+    </div>
+     <button type="submit" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">Submit</i></button>
+     <a ng-click="donutCtrl.destroy(donutCtrl.currentDonut._id)"class="waves-effect waves-light btn">Destroy Donut</a>
+
   </form>
 </div>

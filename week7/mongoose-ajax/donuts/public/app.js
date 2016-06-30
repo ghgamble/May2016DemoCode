@@ -16,6 +16,11 @@
           templateUrl: 'partials/donut_form.html',
           controller: 'createDonutsCtrl as donutCtrl'
         })
+        .state('update-donut',{
+          url: '/update-donut/:id',
+          templateUrl: 'partials/donut_form.html',
+          controller: 'updateDonutsCtrl as donutCtrl'
+        })
 
         $urlRouterProvider.otherwise('/')
     }

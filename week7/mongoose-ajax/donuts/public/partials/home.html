@@ -3,14 +3,14 @@
   <div class="col s12 m7">
     <div class="card" ng-repeat="donut in donutsCtrl.donuts">
       <div class="card-image">
-        <img src="{{donut.picUrl}}">
+        <img ng-src="{{donut.picUrl}}">
         <span class="card-title">{{donut.name}}</span>
       </div>
       <div class="card-content">
         <p>{{donut.price | currency}}</p>
       </div>
       <div class="card-action">
-        <a href="#">Add to Cart</a>
+        <a href="#/update-donut/{{donut._id}}">Update Donut</a>
       </div>
     </div>
   </div>

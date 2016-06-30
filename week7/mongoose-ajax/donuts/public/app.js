@@ -1,5 +1,5 @@
 (function() {
-  angular.module('donutApi',['ui.router'])
+  angular.module('donutApi',['ui.router','donutsCtrlModule'])
     .config(routerConfig)
 
     routerConfig.$inject = ['$stateProvider','$urlRouterProvider']
@@ -8,7 +8,8 @@
       $stateProvider
         .state('home',{
           url: '/',
-          templateUrl: 'partials/home.html'
+          templateUrl: 'partials/home.html',
+          controller: 'allDonutsCtrl as donutsCtrl'
         })
 
         $urlRouterProvider.otherwise('/')

@@ -1,8 +1,6 @@
 
-express error-handling
 
 
-data-modeling (embedded vs referencing?)
 
 
 wait for async calls before doing something else (promises)
@@ -13,3 +11,5 @@ mongoose-express review
 
 REST
 web scraping
+express error-handling
+data-modeling (embedded vs referencing?)

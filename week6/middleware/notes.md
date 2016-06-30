@@ -1,10 +1,3 @@
----
-title: Express Middleware
-type: Lesson
-duration: "0:50"
-creator:
-    name: Brandon
----
 
 ### Objectives
 1. What is middleware? Why do we need it?

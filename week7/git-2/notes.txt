@@ -1,0 +1,39 @@
+multiple ways to refer to commits:
+
+by commit ID, e.g. 440d9e29d9a1a05d75f483f2b76c3ece306ed8ee
+only need to type out first several characters of the commit ID.
+
+
+super log: git log --graph --all --decorate
+
+throw out changes since last commit: git reset --hard HEAD
+throw out changes since second to last commit: git reset --hard HEAD~1
+
+
+revisit past commit: git checkout {commitID}
+
+recreate a past commit: git checkout {commitID} {folderName}
+
+create a branch : git branch {branchName}
+delete a branch : git branch -d {branchName}
+
+merging branches : git merge {branchName}
+
+3 types of merge in git
+
+simplest: fast-forward merge. just moves a label
+medium: automatic merge. git automatically creates a new commit with 2 parents
+hard: manual merge. resolve merge conflicts, then manually add and commit.
+when two branches diverge, and you need to merge them both into each other, the first one might cause problems. however, after you resolve the first one, the second merge is guraunteed to be a fast-forward merge.
+
+
+update remote branch: git push origin {localBranch}:{remoteBranch}
+
+
+check on remotes: git remote show origin
+
+git pull is a shortcut command, combining:
+git fetch + git merge
+
+update remote tracking branches: git fetch origin
+merge the remote tracking branch into main branch: git merge remotes/origin/master

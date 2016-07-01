@@ -1,0 +1,3 @@
+what is an HTTP header? - contains metadata about an HTTP request
+
+What is a cookie? - A short piece of data that servers can tell browsers to store using headers. When the browser returns to a site that set cookies, it sends back all those cookies in a header.

@@ -1,0 +1,9 @@
+password + salt = hash
+
+dragons -> abc123!@#
+dragons -> abc123!@#
+
+
+dragons+987 -> VN^#$%$
+
+dragons+543 -> NVSTG*&

@@ -9,6 +9,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
+
 // Twitter API require
 var tw = require('node-tweet-stream')({
     consumer_key : "a5eUsKWCYu80g4vqBWs1NMu1e",
@@ -27,15 +28,26 @@ app.get('/', function(req, res){
 
 })
 
+// Storing a reference to our webserver
 app.server = app.listen(port)
+
+
+
 
 // SocketIO require
 var io = require('socket.io');
 
+
+
+
 // Let socket.io listen in on our server
 var socketServer = io(app.server)
 
+
+
+
 // Listen for the socket connection event
+// Coming from the io() call on the front end
 socketServer.on('connection', function(socket){
     console.log('Received a socket connection event!');
 
@@ -43,7 +55,15 @@ socketServer.on('connection', function(socket){
     tw.on('tweet', function(tweetData){
 
         // Emitting a socket event named 'tweet' with data attached
-        socket.emit('tweet', tweetData);
+        socket.emit('tweeter', tweetData);
+        // socket.emit('NAME', data)
     });
+
+    socket.on('number', function(data){
+        console.log(data)
+        var newNum = data * -100000
+
+        socketServer.emit('newNumber', newNum)
+    })
 
 })

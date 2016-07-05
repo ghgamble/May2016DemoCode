@@ -1,0 +1,21 @@
+WebSockets!
+	-  Connections that stay open between a client and a server
+	- Bidirectional communication
+	- TCP protocol
+	- Realtime communication
+
+Library - Socket.io
+	- Both client AND server side
+
+	- 2 big methods you'll use
+		1. 'on'   -> handling an event (catch)
+		2. 'emit' -> creating an event (throw)
+
+When to use / NOT use websockets
+	- How important is realtime data?
+	- Be careful of how much data/bandwith you're using
+		- Use as little data as possible
+
+	- Alternative to sockets
+		- Polling
+			- AJAX requests on an interval

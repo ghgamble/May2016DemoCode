@@ -1,0 +1,48 @@
+SSL? TLS? HTTPS?
+
+SSL(secure socket layer) was a protocol developed by netscape in 1995. After version 3.0, it was rebranded as TLS (transport layer security). Most websites use TLS version 1.2 (version 1.3 is in development)
+
+
+SSL is a protocol to secure other protocols.
+
+Physicaly layer
+...
+...
+network layer (IP)
+transport layer (TCP)
+security layer (SSL)
+application layer (HTTPs, SMTPs, FTPs)
+
+public key cryptography 
+private key, used for reading messages (decrypt)
+public key, used for writing messages (encrypt)
+
+acquiring an SSL certificate
+
+Tell a CA (certificate authority) that you want a certificate for your domain.
+Prove to them that you own the domain you say you own. 
+CA gives you a certificate, which is cryptographically signed, so that any client (e.g. browsers) can determine that the cert was issued by the CA, and that it was not tampered with. 
+
+
+Serving HTTPS traffic:
+
+client connects on port 443
+client and server perform SSL handshake, negotiate which type/version of encryption to use (other specifics may vary based on this negotiation)
+
+server sends down the certificate, which contains the server's public key
+client confirms that the certificate was not tampered with. 
+client sends a random message, encrypted with the public key
+server echos back the decrypted random message, proving that they were able to decrypt it. 
+
+
+we are guaranteed that:
+the server is who they say they are (and their cert has not been modified)
+our communication with the server is encrypted
+
+Chrome has determined that some features, such as microphone and camera access, or geolocation, are 'powerful features' and can only be used over HTTPS.
+
+
+get a certificate with letsencrypt:
+https://certbot.eff.org/#ubuntutrusty-other
+
+want to automatically redirect http traffic to https traffic? Try a dedicated web server like nginx.

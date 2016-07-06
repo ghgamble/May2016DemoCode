@@ -14,7 +14,6 @@ var drinkSchema = mongoose.Schema({
 	],
 	shaken 				: Boolean,
 	wellDrink   		: Boolean,
-	price       		: Number,
 	// customersAlsoBought : 
 });
 

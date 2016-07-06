@@ -31,6 +31,15 @@ app.post('/api/drinks', drinksCtrl.upsert) // Create
 app.post('/api/drinks/:id', drinksCtrl.upsert) // Update
 app.delete('/api/drinks/:id', drinksCtrl.delete) // Delete
 
+// Ingredients Routes
+var ingredientsCtrl = require('./controllers/ingredientsController')
+app.get('/api/ingredients', ingredientsCtrl.get) // Get All
+app.get('/api/ingredients/:id', ingredientsCtrl.get) // Get One
+app.post('/api/ingredients', ingredientsCtrl.upsert) // Create
+app.post('/api/ingredients/:id', ingredientsCtrl.upsert) // Update
+app.delete('/api/ingredients/:id', ingredientsCtrl.delete) // Delete
+
+
 
 // Creating Server and Listening for Connections \\
 var port = process.env.PORT || 3000

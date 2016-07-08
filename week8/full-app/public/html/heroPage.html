@@ -1,0 +1,11 @@
+<h2> {{hpCtrl.theHero.name}} </h2>
+
+<div>
+    <p>{{hpCtrl.theHero.gender}} -- {{hpCtrl.theHero.vitality}}</p>
+</div>
+
+<ul>
+    <li ng-repeat="power in hpCtrl.theHero.powers">{{power}}</li>
+</ul>
+
+Lives at : {{hpCtrl.theHero.HQ}}

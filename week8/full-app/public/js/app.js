@@ -9,4 +9,9 @@ function configRouter($stateProvider, $urlRouterProvider){
             templateUrl : '/html/heroes.html',
             controller : 'heroesController as hCtrl'
         })
+        .state('heroPage', {
+            url : '/heroes/:id',
+            templateUrl : '/html/heroPage.html',
+            controller : 'heroPageController as hpCtrl'
+        })
 }

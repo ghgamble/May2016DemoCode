@@ -25,6 +25,8 @@ app.get('/', function(req, res){
 
 // Heroes API routes
 var heroCtrl = require('./controllers/heroController.js')
+app.get('/api/heroes', heroCtrl.get)
+app.get('/api/heroes/:id', heroCtrl.get)
 
 app.post('/api/heroes', heroCtrl.upsert)
 

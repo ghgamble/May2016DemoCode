@@ -18,6 +18,7 @@ function heroesCtrl($http) {
                 hCtrl.newHero = {
                     powers: ['']
                 }
+                hCtrl.getHeroes()
             })
     }
 
@@ -25,4 +26,12 @@ function heroesCtrl($http) {
         e.preventDefault()
         hCtrl.newHero.powers.push('')
     }
+
+    hCtrl.getHeroes = function(){
+        $http.get('/api/heroes')
+            .then(function(returnData){
+                hCtrl.heroes = returnData.data
+            })
+    }
+    hCtrl.getHeroes()
 }

@@ -39,3 +39,13 @@
 
 
 <!--This is where we will see a list of heroes-->
+
+<div>
+    <ul>
+        <li ng-repeat="hero in hCtrl.heroes">
+            <!--<a href="#/heroes/{{hero._id}}">{{hero.name}}</a>-->
+            <a ui-sref="heroPage({id : hero._id})">{{hero.name}}</a>
+            
+        </li>
+    </ul>
+</div>

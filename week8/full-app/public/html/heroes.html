@@ -1,0 +1,32 @@
+<h3> This is the Heroes Page! </h3>
+
+<!--Form to add new heroes-->
+<form ng-submit="hCtrl.createHero()">
+    <input placeholder="name"
+    ng-model="hCtrl.newHero.name" >
+    <input placeholder="gender"
+    ng-model="hCtrl.newHero.gender" >
+    <input placeholder="powers"
+    ng-model="hCtrl.newHero.powers" >
+    <input placeholder="AE"
+    ng-model="hCtrl.newHero.archEnemy" >
+    <input placeholder="Vit"
+    ng-model="hCtrl.newHero.vitality" >
+    
+    <!--<input placeholder="HQ"
+    ng-model="hCtrl.newHero.HQ" >-->
+    <select ng-model="hCtrl.newHero.HQ">
+        <option selected value="">Pick an HQ</option>
+        <option value="gotham">Gotham</option>
+        <option value="bar">The Bar</option>
+        <option value="atlantis">Atlantis</option>
+        <option value="atlanta">Atlanta</option>
+    </select>
+
+
+
+    <input type="submit" value="Make a hero!">
+</form>
+
+
+<!--This is where we will see a list of heroes-->

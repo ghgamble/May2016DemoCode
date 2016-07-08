@@ -24,19 +24,15 @@ module.exports = {
         if(req.params.id){
             // Update
             Hero.update({_id : req.params.id}, req.body, function(err, updated){
+                if(err){
+                   return res.send(err)
+                }
                 res.send(updated)
             })
         }
         else{
             // Create
-            var newHero = new Hero({
-                name       : req.body.name,
-                gender     : req.body.gender,
-                powers     : req.body.powers.split(', '),
-                // archEnemy  : req.body.archEnemy,
-                vitality   : req.body.vitality,
-                HQ         : req.body.HQ,
-            })
+            var newHero = new Hero(req.body)
             
             newHero.save(function(err, doc){
                 res.send(doc)

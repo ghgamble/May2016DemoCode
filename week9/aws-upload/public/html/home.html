@@ -1,0 +1,23 @@
+<html ng-app="HeroesOfAJAX">
+    <head>
+        <title>Heroes of AJAX</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+        
+        <!--PULL IN ng-file-upload -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.1/ng-file-upload.js"></script>
+
+    </head>
+    <body>
+         <h1 ui-sref="heroes"> Heroes of AJAX </h1>
+        
+        <ui-view></ui-view>
+
+
+        <script src="/js/app.js"></script>    
+        <script src="/js/app.heroesController.js"></script>
+        <script src="/js/app.heroPageController.js"></script>
+        
+         
+    </body>
+</html>

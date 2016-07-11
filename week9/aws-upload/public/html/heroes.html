@@ -1,0 +1,58 @@
+<h3> This is the Heroes Page! </h3>
+
+<!--Form to add new heroes-->
+<form ng-submit="hCtrl.createHero()">
+    <input placeholder="name"
+    ng-model="hCtrl.newHero.name" >
+    <input placeholder="gender"
+    ng-model="hCtrl.newHero.gender" >
+    <!--<input placeholder="powers"
+    ng-model="hCtrl.newHero.powers" >-->
+    <input placeholder="AE"
+    ng-model="hCtrl.newHero.archEnemy" >
+    <input placeholder="Vit"
+    ng-model="hCtrl.newHero.vitality" >
+    
+    <!--Repeat for multiple powers-->
+    <input 
+        ng-repeat="power in hCtrl.newHero.powers track by $index" 
+        placeholder="powers"
+        ng-model="hCtrl.newHero.powers[$index]" 
+    >
+    <button ng-click="hCtrl.addPower($event)" type="">MOAR POWER</button>
+
+
+    <!--<input placeholder="HQ"
+    ng-model="hCtrl.newHero.HQ" >-->
+    <select ng-model="hCtrl.newHero.HQ">
+        <option selected value="">Pick an HQ</option>
+        <option value="gotham">Gotham</option>
+        <option value="bar">The Bar</option>
+        <option value="atlantis">Atlantis</option>
+        <option value="atlanta">Atlanta</option>
+    </select>
+
+    <!--USING NG-FILE-UPLOAD ON FILE INPUT-->
+    <input 
+        type="file"
+        ng-model="hCtrl.newHero.costume" 
+        ngf-pattern="'image/*'"
+        ngf-accept="'image/*'"
+        ngf-select
+    >
+
+    <input type="submit" value="Make a hero!">
+</form>
+
+
+<!--This is where we will see a list of heroes-->
+
+<div>
+    <ul>
+        <li ng-repeat="hero in hCtrl.heroes">
+            <!--<a href="#/heroes/{{hero._id}}">{{hero.name}}</a>-->
+            <a ui-sref="heroPage({id : hero._id})">{{hero.name}}</a>
+            
+        </li>
+    </ul>
+</div>

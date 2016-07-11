@@ -1,0 +1,12 @@
+Uploading files to Amazon s3
+	- Why s3?
+		- Cheap! $0.0002 / GB
+
+3 Libraries
+	- s3 node module (npm)
+	- connect-multiparty (npm)
+	- ngFileUpload (angular)
+
+<input type="file">
+
+File Flow : Client -> Server -> s3
